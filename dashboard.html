@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+
+<body class="text-gray-600 font-nunito">
+    <div class="bg-gray-100 min-h-screen">
+        <!-- ======================================================================= -->
+        <!-- Top Navbar Start -->
+        <nav class="bg-gray-50 shadow-sm px-4 h-16 fixed w-full top-0 left-0 flex items-center">
+            <!-- Left Nav Start -->
+            <div class="flex items-center gap-4 md:pl-72">
+                <div id="hambarg" class="cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+                <!-- Search bar Start -->
+                <div class="hidden relative lg:flex text-gray-500">
+                    <div class="absolute left-0 p-2.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <input
+                        class="w-72 block border-none rounded-md outline-none py-2 pl-8 text-base text-gray-600 bg-gray-100 shadow"
+                        type="search" name="" id="">
+                    <button
+                        class="bg-indigo-500 px-4 py-2 text-white absolute right-0 top-0 shadow-md rounded-sm">Search</button>
+                </div>
+                <!-- Search bar End -->
+
+            </div>
+            <!-- Left Nav End -->
+            <!-- Right Nav Start -->
+            <div class="ml-auto flex items-center">
+                <div class="relative">
+                    <div id="country"
+                        class="  cursor-pointer text-gray-600 hover:text-gray-900 ml-1 md:ml-2 lg:ml-4 flex gap-2 items-center">
+                        <img class="w-6" src="src/images/country-flags-16px/16/us_16.png" alt="">
+                        English
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div id="country_list"
+                        class="absolute hidden transition-all duration-200 right-0 w-32 z-50 mt-5 bg-gray-50 rounded-md">
+                        <div class="capitalize">
+                            <a class="transition py-1.5 px-4 flex items-center gap-2 hover:bg-gray-200" href="">
+                                <img class="w-6" src="src/images/country-flags-16px/16/ar_16.png" alt="">
+                                Argentina</a>
+                            <a class="transition py-1.5 px-4 flex items-center gap-2 hover:bg-gray-200" href="">
+                                <img class="w-6" src="src/images/country-flags-16px/16/cn_16.png" alt="">
+                                China</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="cursor-pointer text-gray-600 hover:text-gray-900 ml-1 md:ml-2 lg:ml-4 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                </div>
+                <div class="cursor-pointer text-gray-600 hover:text-gray-900 ml-1 md:ml-2 lg:ml-4 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                    </svg>
+                </div>
+                <div class="cursor-pointer text-gray-600 hover:text-gray-900 ml-1 md:ml-2 lg:ml-4 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                </div>
+
+                <div class="relative flex ml-4">
+                    <div id="profile" class="flex border h-16 px-4 items-center cursor-pointer">
+                        <img class="w-8 h-8 rounded-full object-cover " src="src/images/mdfayezullah.webp" alt="">
+                        <div class="hidden lg:block ml-4 capitalize leading-tight">
+                            <p>Md fayezullah<br> <span class="text-xs">founder</span></p>
+                        </div>
+                    </div>
+                    <div id="profile_list"
+                        class="hidden absolute transition-all duration-500 w-48 z-50 mt-16 bg-gray-50 right-0 rounded-b-md  py-2 space-y-2 ">
+                        <h2 class="text-xs font-semibold px-4 py-2 capitalize">welcome !</h2>
+                        <div class="capitalize">
+
+                            <a class="transition py-2 px-4 flex items-center gap-2 hover:bg-gray-200" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                My account</a>
+                            <a class="transition py-2 px-4 flex items-center gap-2 hover:bg-gray-200" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                                setting</a>
+                            <a class="transition py-2 px-4 flex items-center gap-2 hover:bg-gray-200" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                                support</a>
+                            <a class="transition py-2 px-4 flex items-center gap-2 hover:bg-gray-200" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                </svg>
+                                logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Nav End -->
+        </nav>
+        <!-- Top Navbar end -->
+        <!-- ==================================================================== -->
+        <!-- left sidebar start -->
+        <div id="left_sidebar" class=" fixed md:block z-10 w-72 shadow-md top-0 left-0 h-full transition-all duration-700 overflow-y-scroll bg-gray-800">
+               
+                <div class="flex flex-col h-full">
+                    <div class="relative">
+                        <div id="remove_sidebar" class="absolute right-2 top-7 cursor-pointer text-gray-200 block md:hidden"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                        </div>
+                        <div class="py-7 flex justify-center ">
+                            <a class="text-center" href="index.html">
+                                <img class="w-28 h-auto" src="src/images/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class=" text-xs uppercase font-semibold text-gray-300 pl-8">
+                            <h3>Navigation</h3>
+                        </div>
+                        <div id="dashboard"
+                            class="pl-8 pr-4 py-4 text-xl text-gray-300 cursor-pointer flex items-center gap-3 relative ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                            <h2 class="text-sm font-bold ">Dashboard</h2>
+                            <div class="ml-auto"><span
+                                    class="bg-green-500 text-gray-100 text-xs font-semibold px-2.5 py-0.5 rounded ">4</span>
+                            </div>
+                        </div>
+                        <!-- dashboard dropdown list start -->
+                        <div id="dashboard_nav" class="hidden pl-16 pr-4 py-4 transition-all duration-500 text-sm">
+                            <ul class="flex flex-col gap-4 capitalize text-slate-400 ">
+                                <li class="hover:text-slate-100 transition"><a class="inline-block w-full"
+                                        href="">analytics</a>
+                                </li>
+                                <li class="hover:text-slate-100 transition"><a class="inline-block w-full"
+                                        href="">E-commerce</a>
+                                </li>
+                                <li class="hover:text-slate-100 transition"><a class="inline-block w-full"
+                                        href="">Project</a></li>
+                                <li class="hover:text-slate-100 transition flex cursor-pointer"><a class="" href="">E-Wallet
+                                    </a>
+                                    <span
+                                        class="ml-auto text-xs bg-red-500 px-1 py-[2.5px] text-center rounded-sm text-slate-100">new</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- dashboard dropdown list end -->
+                        <div class=" text-xs uppercase font-semibold text-slate-50 pl-8">
+                            <h3>apps</h3>
+                        </div>
+                        <div
+                            class="pl-8 pr-4 py-2 text-xl text-gray-300 hover:text-gray-100  cursor-pointer flex items-center gap-3 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <h2 class="text-sm font-bold ">Calender</h2>
+                            <div class="ml-auto hidden"><span
+                                    class="bg-green-500 text-gray-100 text-xs font-semibold px-2.5 py-0.5 rounded ">4</span>
+                            </div>
+                        </div>
+                        <div
+                            class="pl-8 pr-4 py-2 text-xl text-gray-300 hover:text-gray-100  cursor-pointer flex items-center gap-3 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                            <h2 class="text-sm font-bold ">CRM</h2>
+                            <div class="ml-auto"><span
+                                    class="bg-red-500 text-gray-100 text-xs font-semibold px-2.5 py-0.5 rounded ">4</span>
+                            </div>
+                        </div>
+                        <div id="e-commerce"
+                            class="pl-8 pr-4 py-2 text-xl text-gray-300 hover:text-gray-100  cursor-pointer flex items-center gap-3 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                            </svg>
+    
+                            <h2 class="text-sm font-bold ">E-commerce</h2>
+                            <div class="ml-auto">
+                                <svg id="right_arrow" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <svg id="down_arrow" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="e-commerce_list" class=" hidden pl-16 pr-4 py-4 transition text-sm">
+                            <ul class="flex flex-col gap-4 capitalize text-slate-400 ">
+                                <li class="hover:text-slate-100 transition"><a class="inline-block w-full"
+                                        href="">products</a>
+                                </li>
+                                <li class="hover:text-slate-100 transition"><a class="inline-block w-full" href="">product
+                                        details</a>
+                                </li>
+                                <li class="hover:text-slate-100 transition"><a class="inline-block w-full" href="">Order</a>
+                                </li>
+                                <li class="hover:text-slate-100 transition flex cursor-pointer"><a class="" href="">order
+                                        Details </a>
+                                    <span
+                                        class="ml-auto text-xs bg-indigo-500 px-1 py-[2.5px] text-center rounded-sm text-slate-100">new</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="project"
+                            class="pl-8 pr-4 py-2 text-xl text-gray-300 hover:text-gray-100  cursor-pointer flex items-center gap-3 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+    
+                            <h2 class="text-sm font-bold ">Project</h2>
+                            <div class="ml-auto">
+                                <svg id="down_arrow_project" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                                <svg id="right_arrow_project" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="project_list" class=" hidden pl-16 pr-4 py-4 transition text-sm">
+                            <ul class="flex flex-col gap-4 capitalize text-slate-400 ">
+                                <li class="hover:text-slate-100 transition"><a class="inline-block w-full" href="">list</a>
+                                </li>
+                                <li class="hover:text-slate-100 transition"><a class="inline-block w-full"
+                                        href="">details</a>
+                                </li>
+                                <li class="hover:text-slate-100 transition"><a class="inline-block w-full" href="">Gantt</a>
+                                </li>
+                                <li class="hover:text-slate-100 transition flex cursor-pointer"><a class="" href="">Create
+                                        Project</a>
+                                    <span
+                                        class="ml-auto text-xs bg-indigo-500 px-1 py-[2.5px] text-center rounded-sm text-slate-100">new</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center bg-gray-700 mt-auto  m-8 shadow-sm rounded-sm p-4">
+                        <div class="text-gray-100 flex flex-col items-center justify-center space-y-3">
+                            <img class="w-2/4 h-auto " src="src/images/help-icon.svg" alt="">
+                            <h2>Unlimited Access</h2>
+                            <p class="text-center">Upgrade to plan to get access to unlimited reports</p>
+                            <button
+                                class="bg-gray-500 text-sm shadow-sm px-2 py-1 rounded-sm transition delay-75 hover:bg-gray-600">Upgrade</button>
+                        </div>
+                    </div>
+                </div>
+            
+          
+
+        </div>
+        <!-- left side bar End -->
+        <!-- Dashboard Content area Start -->
+        <div class="mt-16 ml-2 md:ml-72 p-2 md:p-4">
+            <div class="flex justify-between mb-4">
+                <h2 class="text-xl font-bold">Dashboard</h2>
+                <div>
+                    <!-- <form>   
+                        <div class="relative">
+                           <input class="border-0 focus:outline-none p-[10px]" name="dates" value="" id="datepicker">
+                            <div class="absolute top-[2px] right-0 bg-indigo-200 text-indigo-600 p-2 rounded">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                  </svg>
+                            </div>   
+                        </div>
+                    </form> -->
+                </div>
+            </div>
+            <div class="grid grid-cols-1  md:grid-cols-6 lg:grid-cols-12 gap-3 grid-flow-row-dense">
+                <div class="bg-white shadow-md rounded  md:col-span-3">
+                    <div class="flex flex-col justify-between h-full p-4">
+                        <div class="flex justify-between items-center flex-grow-0">
+                            <div class="space-y-5 text-xl">
+                                <h4 class="">Customers</h4>
+                                <p class="font-bold text-2xl">36,254</p>
+                            </div>
+                            <div class="bg-indigo-200 p-2 rounded self-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                  </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+                                  </svg>
+                                  <p>5.27%</p>
+                            </div>
+                            <p class="text-xs "> Since last month</p>
+                        </div> <!-- single item card -->
+                    </div>
+                </div>
+                <div class="bg-white shadow-md rounded md:col-span-3 ">
+                    <div class="flex flex-col justify-between h-full p-4">
+                        <div class="flex justify-between items-center flex-grow-0">
+                            <div class="space-y-5 text-xl">
+                                <h4 class="">Order</h4>
+                                <p class="font-bold text-2xl">5,543</p>
+                            </div>
+                            <div class="bg-indigo-200 p-2 rounded self-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                  </svg>
+                            </div>
+                        </div>
+                        <div class="flex  gap-3 mt-4 items-center">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+                                  </svg>
+                                  <p>5.27%</p>
+                            </div>
+                            <p class="text-xs"> Since last month</p>
+                        </div> <!-- single item card -->
+                    </div>
+                </div>
+               
+                <div class="bg-white shadow-md rounded md:col-span-3 ">
+                    <div class="flex flex-col justify-between h-full p-4">
+                        <div class="flex justify-between items-center flex-grow-0">
+                            <div class="space-y-5 text-xl">
+                                <h4 class="">Revenue</h4>
+                                <p class="font-bold text-2xl">$6,254</p>
+                            </div>
+                            <div class="bg-indigo-200 p-2 rounded self-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-4 items-center">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+                                  </svg>
+                                  <p>5.27%</p>
+                            </div>
+                            <p class="text-xs"> Since last month</p>
+                        </div> <!-- single item card -->
+                    </div>
+                </div>
+                <div class="bg-white shadow-md rounded md:col-span-3 ">
+                    <div class="flex flex-col justify-between h-full p-4">
+                        <div class="flex justify-between items-center flex-grow-0">
+                            <div class="space-y-5 text-xl">
+                                <h4 class="">Growth</h4>
+                                <p class="font-bold text-2xl">+ 30.56%</p>
+                            </div>
+                            <div class="bg-indigo-200 p-2 rounded self-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                  </svg>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-4 items-center">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+                                  </svg>
+                                  <p> 4.87%</p>
+                            </div>
+                            <p class="text-xs"> Since last month</p>
+                        </div> <!-- single item card -->
+                    </div>
+                </div>
+                <div class="bg-white shadow-md rounded p-2 md:col-span-6 row-span-2 -order-2">
+                    <div class="py-3 px-5">Bar chart</div>
+                    <div class="overflow-hidden">
+                        <canvas class="p-10" id="chartBar"></canvas>
+                      </div>
+                      
+                      <!-- Required chart.js -->
+                      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                      
+                      <!-- Chart bar -->
+                      <script>
+                        const labelsBarChart = [
+                          "January",
+                          "February",
+                          "March",
+                          "April",
+                          "May",
+                          "June",
+                          "july",
+                          "August",
+                          "September",
+                          "October",
+                          "November",
+                          "December",
+
+                        ];
+                        const dataBarChart = {
+                          labels: labelsBarChart,
+                          datasets: [
+                            {
+                              label: "My First dataset",
+                              backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                              borderColor: "hsl(252, 82.9%, 67.8%)",
+                              data: [0, 10, 5, 2, 20, 30, 45,40,45,50,46, 42],
+                            },
+                          ],
+                        };
+                      
+                        const configBarChart = {
+                          type: "bar",
+                          data: dataBarChart,
+                          options: {},
+                        };
+                      
+                        var chartBar = new Chart(
+                          document.getElementById("chartBar"),
+                          configBarChart
+                        );
+                      </script>
+                </div>
+            </div>
+
+        </div>
+        <!-- Dashboard Content area End -->
+    </div>
+
+    <script src="public/js/main.js"></script>
+    <script>
+
+   
+
+    </script>
+</body>
+
+</html>
